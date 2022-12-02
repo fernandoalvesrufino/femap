@@ -143,15 +143,17 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  transition: all .45s ease;
 }
 
 #header.scroll {
   box-shadow: 0px 0px 12px rgba(0, 8, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.800);
 }
 
 /* -------------- Logo -------------- */
 .logo img{
-  height: 5rem;
+  height: 4rem;
 }
 
 /* -------------- Navigation -------------- */
@@ -335,7 +337,7 @@ nav.show div.icon-close{
 /* -------------- history -------------- */
 
 #history {
-  background-color: var(--body-color);
+  background-color: rgb(22, 22, 22);
 }
 
 #history .container {
@@ -631,16 +633,15 @@ footer .social a:hover{
 }
 
 /* -------------- back to top -------------- */
-.back-to-top {
-  background: var(--base-color);
+.help {
   color: var(--text-color-light);
 
+  width: 4rem;
   position: fixed;
   right: 1rem;
   bottom: 1rem;
 
   padding: 0.5rem;
-  clip-path: circle();
 
   font-size: 1.5rem;
   line-height: 0;
@@ -652,14 +653,22 @@ footer .social a:hover{
   transform: translateY(100%);
 } 
 
-a.back-to-top:hover {
+a.help:hover {
   transform: translateY(-8px);
 }
 
-.back-to-top.show {
+.help.show {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ---------------- creditos ------------------- */
+.creditos {
+  background-color: black;
+  color: white;
+  padding-bottom: 1rem;
+  font-size: 0.7rem;
 }
 
 
@@ -778,10 +787,11 @@ a.back-to-top:hover {
 
   /* services */
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .card {
+    background-color: rgb(44, 44, 44);
     padding: 4rem 1.5rem;
     position: relative;
     overflow: hidden;
@@ -847,7 +857,7 @@ a.back-to-top:hover {
   }
 
   .card:hover .layer{
-    background: linear-gradient(var(--base-color), white);
+    background: linear-gradient(white, var(--base-color));
     height: 100%;
   }
 
@@ -869,6 +879,11 @@ a.back-to-top:hover {
 
   #contact ul.grid {
     gap: 1rem;
+  }
+
+  #contact ul li {
+    display: flex;
+    align-items: center;
   }
 
   #contact ul li iframe{
