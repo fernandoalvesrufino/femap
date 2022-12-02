@@ -262,14 +262,35 @@ nav.show div.icon-close{
 #home {
   overflow: hidden;
   background-image: url(./img/ram-home-2.webp);
-  background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: -14rem;
+  background-position-y: -24rem;
 }
 
-#home .container {
-  margin: 0;
+#home .marcas {
+  display: grid;
+  grid-auto-flow: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem;
 }
+
+#home .marcas .marca img {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#home .marcas .marca {
+  height: 100%;
+  padding: 1rem auto;
+}
+
+#home .container .marcas {
+  grid-auto-flow: column;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
 
 /* #home .image {
   position: relative;
@@ -318,8 +339,10 @@ nav.show div.icon-close{
 }
 
 #history .container {
-  margin: 0;
+  margin: 0 auto;
+  grid-auto-flow: column;
 }
+
 
 /* #history .image {
   position: relative;
@@ -354,22 +377,36 @@ nav.show div.icon-close{
 
 #history .text p {
   text-align: left;
-  padding-inline: 3rem;
+  padding-inline: 1rem;
 }
 
 /* -------------- services -------------- */
+
+#services .container header {
+  display: grid;
+}
+
+#services .container header h2.title, 
+#services .container header p  {
+  text-align: center;
+}
 
 .cards.grid{
   gap: 1.5rem;
 }
 
 .card {
-
-  padding: 3.625rem 2rem;
+  display: grid;
+  grid-auto-flow: column;
+  padding: 1rem 0.5rem;
   box-shadow: 0px 0px 12px rgba(0, 8, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
+}
+
+.cards {
+  grid-template-columns: 1fr 1fr;
 }
 
 .card i {
@@ -377,6 +414,7 @@ nav.show div.icon-close{
   margin-bottom: 1.5rem;
   font-size: 5rem;
   color: var(--base-color);
+  text-align: center;
 }
 
 .card i img {
@@ -384,13 +422,48 @@ nav.show div.icon-close{
 }
 
 .card .title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 0.75rem;
 }
 
 .card p {
   text-align: left;
 }
+
+.layer {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+  transition: height 0.5s;
+}
+
+.layer h3 {
+  transition: all .45s ease;
+  /* height: 5.125rem; */
+}
+
+
+.layer p{
+  color: rgb(65, 65, 65);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.layer p span{
+  text-align: center;
+  display: block;
+  font-size: 1rem;
+}
+
 /* -------------- testimonials -------------- */
 #testimonials {
   background: white;
@@ -687,7 +760,14 @@ a.back-to-top:hover {
     height: 100%;
     padding: 1rem auto;
     width: 6em;
-    
+  }
+
+  #home #dodge{
+    width: 11rem;
+  }
+
+  #home #chrysler {
+    width: 9rem;
   }
   
   /* history */
@@ -702,13 +782,18 @@ a.back-to-top:hover {
   }
 
   .card {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 4rem 1.5rem;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.5s;
     transition: all .45s ease;
+  }
+
+  .cards .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .layer {
@@ -749,6 +834,11 @@ a.back-to-top:hover {
     box-shadow: 0px 0px 18px var(--card-color);
     transition: all .45s ease;
 
+  }
+
+  .card .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
   }
   
   .card:hover h3{
